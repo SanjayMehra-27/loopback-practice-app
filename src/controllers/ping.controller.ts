@@ -43,7 +43,7 @@ export class PingController {
   ping(): object {
     // Reply with a greeting, the current time, the url, and request headers
     return {
-      greeting: 'Hello from LoopBack Practice ToDo App ...',
+      greeting: 'Hello from Sanjay Mehra',
       date: new Date(),
       url: this.req.url,
       headers: Object.assign({}, this.req.headers),
