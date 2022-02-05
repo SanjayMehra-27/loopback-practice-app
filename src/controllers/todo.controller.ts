@@ -1,21 +1,13 @@
 import {
   Count,
-  CountSchema,
-  Filter,
-  FilterExcludingWhere,
+  CountSchema, FilterExcludingWhere,
   repository,
-  Where,
+  Where
 } from '@loopback/repository';
 import {
-  post,
-  param,
-  get,
-  getModelSchemaRef,
-  patch,
-  put,
-  del,
-  requestBody,
-  response,
+  del, get,
+  getModelSchemaRef, param, patch, post, put, requestBody,
+  response
 } from '@loopback/rest';
 import {Todo} from '../models';
 import {TodoRepository} from '../repositories';
@@ -58,23 +50,23 @@ export class TodoController {
     return this.todoRepository.count(where);
   }
 
-  @get('/todos')
-  @response(200, {
-    description: 'Array of Todo model instances',
-    content: {
-      'application/json': {
-        schema: {
-          type: 'array',
-          items: getModelSchemaRef(Todo, {includeRelations: true}),
-        },
-      },
-    },
-  })
-  async find(
-    @param.filter(Todo) filter?: Filter<Todo>,
-  ): Promise<Todo[]> {
-    return this.todoRepository.find(filter);
-  }
+  // @get('/todos')
+  // @response(200, {
+  //   description: 'Array of Todo model instances',
+  //   content: {
+  //     'application/json': {
+  //       schema: {
+  //         type: 'array',
+  //         items: getModelSchemaRef(Todo, {includeRelations: true}),
+  //       },
+  //     },
+  //   },
+  // })
+  // async find(
+  //   @param.filter(Todo) filter?: Filter<Todo>,
+  // ): Promise<Todo[]> {
+  //   return this.todoRepository.find(filter);
+  // }
 
   @patch('/todos')
   @response(200, {
