@@ -41,7 +41,7 @@ let PingController = class PingController {
     ping() {
         // Reply with a greeting, the current time, the url, and request headers
         return {
-            greeting: 'Hello from Sanjay Mehra',
+            greeting: 'Hello from First Ping API',
             date: new Date(),
             url: this.req.url,
             headers: Object.assign({}, this.req.headers),
