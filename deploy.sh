@@ -1,4 +1,5 @@
 #!/bin/bash
+pm2 kill
 git pull
 # npm install
 # npm run build
