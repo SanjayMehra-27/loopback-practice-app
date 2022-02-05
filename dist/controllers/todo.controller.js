@@ -16,9 +16,23 @@ let TodoController = class TodoController {
     async count(where) {
         return this.todoRepository.count(where);
     }
-    async find(filter) {
-        return this.todoRepository.find(filter);
-    }
+    // @get('/todos')
+    // @response(200, {
+    //   description: 'Array of Todo model instances',
+    //   content: {
+    //     'application/json': {
+    //       schema: {
+    //         type: 'array',
+    //         items: getModelSchemaRef(Todo, {includeRelations: true}),
+    //       },
+    //     },
+    //   },
+    // })
+    // async find(
+    //   @param.filter(Todo) filter?: Filter<Todo>,
+    // ): Promise<Todo[]> {
+    //   return this.todoRepository.find(filter);
+    // }
     async updateAll(todo, where) {
         return this.todoRepository.updateAll(todo, where);
     }
@@ -66,24 +80,6 @@ let TodoController = class TodoController {
     (0, tslib_1.__metadata)("design:paramtypes", [Object]),
     (0, tslib_1.__metadata)("design:returntype", Promise)
 ], TodoController.prototype, "count", null);
-(0, tslib_1.__decorate)([
-    (0, rest_1.get)('/todos'),
-    (0, rest_1.response)(200, {
-        description: 'Array of Todo model instances',
-        content: {
-            'application/json': {
-                schema: {
-                    type: 'array',
-                    items: (0, rest_1.getModelSchemaRef)(models_1.Todo, { includeRelations: true }),
-                },
-            },
-        },
-    }),
-    (0, tslib_1.__param)(0, rest_1.param.filter(models_1.Todo)),
-    (0, tslib_1.__metadata)("design:type", Function),
-    (0, tslib_1.__metadata)("design:paramtypes", [Object]),
-    (0, tslib_1.__metadata)("design:returntype", Promise)
-], TodoController.prototype, "find", null);
 (0, tslib_1.__decorate)([
     (0, rest_1.patch)('/todos'),
     (0, rest_1.response)(200, {
